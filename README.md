@@ -1,13 +1,4 @@
----
-title: Spring Boot
-date: 2016-10-16 20:05:20
-tags: Spring
-categories: Spring
----
-
-参考：《JavaEE开发的颠覆者 Spring Boot实战》
-
-<!--more-->
+# JavaEE开发的颠覆者 Spring Boot实战 的一些 demo
 
 # 第2章 Spring 的常用配置
 ## 2.1 Bean 的Scope
