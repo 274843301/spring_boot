@@ -1,0 +1,30 @@
+# https://github.com/spring-projects/spring-boot/tree/v1.4.1.RELEASE/spring-boot-samples/spring-boot-sample-web-thymeleaf3
+
+security:
+    basic:
+        enabled: false
+server:
+    error:
+        whitelabel:
+            enabled: false
+    port: 8082
+    context-path: /thymeleaf
+spring:
+    datasource:
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        password: 111111
+        url: jdbc:sqlserver://sql01:1433;databaseName=test_mike
+        username: sa
+    jackson:
+        serialization:
+            indent_output: true
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+    output:
+        ansi:
+            enabled: always
+    thymeleaf:
+      mode: HTML5
+      cache: false
