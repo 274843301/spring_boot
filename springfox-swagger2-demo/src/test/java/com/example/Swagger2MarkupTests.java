@@ -62,5 +62,26 @@ public class Swagger2MarkupTests {
         }
         LOG.info("--------------------swaggerJson create --------------------");
     }
+    /**
+     * 将 Swagger.json 转换成 Markdown
+     Swagger2markup将Swagger语义（json、yaml）转换成markdown、asciidoc，CONFLUENCE_MARKUP文本格式
+     * @throws Exception
+     */
+    @Test
+    public void generateMarkdownDocs() throws Exception {
+        //    输出Markdown格式
+        Swagger2MarkupConfig config = new Swagger2MarkupConfigBuilder()
+                .withMarkupLanguage(MarkupLanguage.MARKDOWN)
+                .withOutputLanguage(Language.ZH)
+                .withPathsGroupedBy(GroupBy.TAGS)
+                .withGeneratedExamples()
+                .withoutInlineSchema()
+                .build();
+
+        Swagger2MarkupConverter.from(new URL("http://localhost:8080/restdocs/v2/api-docs"))
+                .withConfig(config)
+                .build()
+                .toFolder(Paths.get("D:\\git\\spring_boot\\springfox-swagger2-demo\\src\\docs\\markdown"));
+    }
 
 }
